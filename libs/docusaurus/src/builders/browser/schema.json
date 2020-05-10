@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://json-schema.org/draft-07/schema",
-  "title": "BuildDocusaurus builder",
+  "title": "Browser builder",
   "description": "Build website",
   "type": "object",
   "properties": {

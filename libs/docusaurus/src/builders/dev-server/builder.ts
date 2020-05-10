@@ -6,11 +6,11 @@ import {
 import { start } from '@docusaurus/core/lib';
 import { from, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { DocusaurusBuilderSchema } from './schema';
+import { DevServerBuilderSchema } from './schema';
 import { getProjectRoot } from '../../utils';
 
 export function runBuilder(
-  options: DocusaurusBuilderSchema,
+  options: DevServerBuilderSchema,
   context: BuilderContext
 ): Observable<BuilderOutput> {
   return from(getProjectRoot(context)).pipe(

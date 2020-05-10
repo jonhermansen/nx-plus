@@ -35,9 +35,7 @@ interface NormalizedSchema extends AppSchematicSchema {
   parsedTags: string[];
 }
 
-function normalizeOptions(
-  options: AppSchematicSchema
-): NormalizedSchema {
+function normalizeOptions(options: AppSchematicSchema): NormalizedSchema {
   const name = toFileName(options.name);
   const projectDirectory = options.directory
     ? `${toFileName(options.directory)}/${name}`
@@ -136,17 +134,17 @@ export default function(options: AppSchematicSchema): Rule {
         projectType
       }).targets;
       targets.add({
-        name: 'docusaurus',
-        builder: '@nx-plus/docusaurus:docusaurus',
+        name: 'build',
+        builder: '@nx-plus/docusaurus:browser',
         options: {
-          port: 3000
+          outputPath: `dist/docusaurus/${normalizedOptions.projectName}`
         }
       });
       targets.add({
-        name: 'build-docusaurus',
-        builder: '@nx-plus/docusaurus:build-docusaurus',
+        name: 'serve',
+        builder: '@nx-plus/docusaurus:dev-server',
         options: {
-          outputPath: `dist/docusaurus/${normalizedOptions.projectName}`
+          port: 3000
         }
       });
     }),

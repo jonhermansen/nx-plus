@@ -7,11 +7,11 @@ import { build } from '@docusaurus/core/lib';
 import { join, normalize } from '@angular-devkit/core';
 import { from, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { BuildDocusaurusBuilderSchema } from './schema';
+import { BrowserBuilderSchema } from './schema';
 import { getProjectRoot } from '../../utils';
 
 export function runBuilder(
-  options: BuildDocusaurusBuilderSchema,
+  options: BrowserBuilderSchema,
   context: BuilderContext
 ): Observable<BuilderOutput> {
   if (!options.outputPath) {
