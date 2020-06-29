@@ -26,6 +26,9 @@
     "url": "https://github.com/ZachJW34/nx-plus/issues"
   },
   "homepage": "https://github.com/ZachJW34/nx-plus/tree/master/libs/vue-plugin#readme",
+  "scripts": {
+    "postinstall": "node src/scripts/postinstall.js"
+  },
   "peerDependencies": {
     "@nrwl/workspace": "^9.0.0"
   },
