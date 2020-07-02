@@ -7,11 +7,12 @@ jobs:
       - image: cypress/base:12
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          pkg-manager: yarn
       - run: npm run affected:lint -- --all
       - run: npm run affected:test -- --all
       - run: npm run affected:e2e -- --all
 workflows:
-    default:
-      jobs:
-        - all
+  default:
+    jobs:
+      - all
